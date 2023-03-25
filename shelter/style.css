@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #CDCDCD;
+}
+
+header {
+    position: absolute;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1220px;
+    margin: 0 50px;
+}
+
+.logo-title {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+}
+
+.logo-subtitle {
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+.section-start-screen .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-start-screen {
+    background: url(assets/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+}
+
+.start-screen-puppy {
+    width: 698px;
+    height: 728px;
+}
+
+h2 {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 57px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.start-screen-text {
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #CDCDCD;
+}
+
+button {
+    box-sizing: border-box;
+    border-radius: 100px;
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    padding: 15px 45px;
+    border: 0;
+}
+
+.button-primary {
+    background: #F1CDB3;
+}
+
+.button-secondary {
+    border: 2px solid #F1CDB3;
+    background: transparent;
+}
+
+.section-about .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.about-pets {
+    width: 300px;
+    height: 408px;
+}
+
+h3 {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.about-text {
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #4C4C4C;
+}
+
+.section-pets .section-container {
+    background: #F6F6F6;
+}
+
+.pets-title {
+    text-align: center;
+}
+
+.pets-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    width: 52px;
+    height: 52px;
+}
+
+.arrow-left {
+    background-image: url(assets/Arrow-left.svg);
+}
+
+.arrow-right {
+    background-image: url(assets/Arrow-right.svg);
+}
+
+#Katrine-figure .card-image {
+    background-image: url(images/pets-katrine.png);
+}
