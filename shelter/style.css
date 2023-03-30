@@ -184,6 +184,7 @@ header.white .logo-subtitle {
   text-underline-offset: 7px;
   text-decoration-thickness: 3px;
   text-decoration-color: #F1CDB3;
+  cursor: default;
 }
 .white .nav-link.active {
   color: #545454;
@@ -431,6 +432,9 @@ footer {
 
 .contacts-item {
   display: contents;
+}
+.contacts-item:hover h4 {
+  color: #fde9db;
 }
 .contacts-item a {
   display: inline-flex;
