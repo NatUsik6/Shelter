@@ -231,15 +231,13 @@ header {
 
 #about-the-shelter {
     background-color: #FFFFFF;
-}
 
-#about-the-shelter .section-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 175px;
-    margin-top: 90px;
-    margin-bottom: 90px;
+    .section-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 175px;
+    }
 }
 
 .about {
