@@ -192,6 +192,7 @@ header {
     text-underline-offset: 7px;
     text-decoration-thickness: 3px;
     text-decoration-color: #F1CDB3;
+    cursor: default;
 
     .white & {
         color: #545454;
@@ -453,6 +454,12 @@ footer {
 
 .contacts-item {
     display: contents;
+
+    &:hover {
+        h4 {
+            color: #fde9db;
+        }
+    }
 
     a {
         display: inline-flex;
