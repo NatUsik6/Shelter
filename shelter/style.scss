@@ -1,3 +1,7 @@
+$desktop: 1280px;
+$tablet: 768px;
+$mobile: 320px;
+
 * {
     margin: 0;
     padding: 0;
@@ -72,7 +76,6 @@ h2 {
     font-weight: 400;
     font-size: 44px;
     line-height: 57px;
-    display: flex;
     align-items: center;
     color: #FFFFFF;
 }
@@ -114,13 +117,26 @@ footer {
 .header-container,
 .section-container,
 .footer-container {
-    width: 1200px;
-    margin: 0 auto;
     box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    @media screen and (max-width: $desktop) {
+        margin: 0 40px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        margin: 0 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        margin: 0 20px;
+    }
 }
 
 .section-container {
-    margin: 80px auto 100px;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 header {
@@ -146,7 +162,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .logo {
@@ -207,12 +224,41 @@ header {
     padding-top: 180px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    align-items: end;
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 42px;
+
+    .start-screen-puppy {
+        width: 698px;
+    }
+
+    @media screen and (max-width: 1030px) {
+        padding-top: 150px;
+        flex-direction: column;
+        gap: 100px;
+
+        .start-screen-puppy {
+            width: 80%;
+        }
+    }
 }
 
 .start-screen {
-    margin: 163px 42px auto 0;
+    margin: 163px auto 243px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    h2 {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1030px) {
+        width: 65%;
+        margin: auto;
+        align-items: center;
+    }
 }
 
 .start-screen-text {
@@ -221,32 +267,35 @@ header {
     font-size: 15px;
     line-height: 24px;
     color: #CDCDCD;
-    padding: 42px 0;
-}
-
-.start-screen-puppy {
-    width: 698px;
-    height: 728px;
 }
 
 #about-the-shelter {
     background-color: #FFFFFF;
 
-    .section-container {
+    .section-container .about-container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 0 175px;
+        gap: 14.1%;
+        margin: auto;
+        max-width: 850px;
+
+        @media screen and (max-width: $tablet) {
+            flex-direction: column-reverse;
+            gap: 80px;
+            max-width: 437px;
+        }
     }
 }
 
 .about {
-    margin-left: 120px;
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .about-pets {
     width: 300px;
-    height: 408px;
 }
 
 .about-text {
@@ -255,10 +304,6 @@ header {
     font-size: 15px;
     line-height: 24px;
     color: #4C4C4C;
-}
-
-.about :nth-child(2) {
-    margin: 25px 0;
 }
 
 #our-pets {
@@ -289,12 +334,14 @@ header {
 
 .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-
-    &:not(.all-pets) figure:nth-child(2) {
-        margin: 0 90px;
-    }
+    height: 435px;
+    overflow: hidden;
+    margin: 0 12px;
+    gap: 40px;
+    width: 100%;
+    max-width: 1040px;
 
     figure {
         background: #FAFAFA;
@@ -311,7 +358,7 @@ header {
     figcaption {
         * {
             display: block;
-            margin: 30px auto;
+            margin: 26px auto 30px;
         }
 
         p {
@@ -335,6 +382,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     padding: 0;
+    min-width: 52px;
     width: 52px;
     height: 52px;
 }
@@ -365,12 +413,20 @@ header {
     gap: 55px 120px;
     margin-top: 60px;
 
+    @media screen and (max-width: 1110px) {
+        column-gap: 60px;
+    }
+
     figure {
         text-align: center;
+
+        @media screen and (max-width: 1110px) {
+            flex-basis: 170px;
+        }
     }
 
     h4 {
-        margin-top: 30px;
+        margin-top: 27px;
     }
 }
 
@@ -425,9 +481,11 @@ footer {
 }
 
 .footer-container {
-    margin: 40px auto 0;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 65px;
 
     h3 {
         color: #FFFFFF;
@@ -440,6 +498,7 @@ footer {
     grid-template-rows: 1.25fr 1fr 1fr;
     grid-auto-flow: column;
     column-gap: 160px;
+    margin: auto;
 }
 
 .contacts-container {
@@ -473,5 +532,5 @@ footer {
 
 .footer-puppy {
     width: 300px;
-    height: 310px;
+    margin: auto;
 }
