@@ -71,6 +71,14 @@ h2 {
   align-items: center;
   color: #FFFFFF;
 }
+@media screen and (max-width: 540px) {
+  h2 {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
 
 h3 {
   font-family: "Georgia", serif;
@@ -79,6 +87,12 @@ h3 {
   line-height: 45px;
   letter-spacing: 0.06em;
   color: #545454;
+}
+@media screen and (max-width: 540px) {
+  h3 {
+    font-size: 25px;
+    line-height: 32px;
+  }
 }
 
 h4 {
@@ -131,7 +145,7 @@ footer {
   .header-container,
   .section-container,
   .footer-container {
-    margin: 0 20px;
+    margin: 0 10px;
   }
 }
 
@@ -162,6 +176,24 @@ header.white .logo-subtitle {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+.header-container nav {
+  visibility: collapse;
+  position: absolute;
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .header-container nav {
+    opacity: 100%;
+    visibility: visible;
+    position: static;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 
 .logo {
   text-align: right;
@@ -185,6 +217,19 @@ header.white .logo-subtitle {
   letter-spacing: 0.1em;
   color: #FFFFFF;
   margin-top: 10px;
+}
+
+.burger-button {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .burger-button {
+    display: none;
+  }
+}
+
+.burger-button:hover {
+  cursor: pointer;
 }
 
 .nav-list {
@@ -229,13 +274,25 @@ header.white .logo-subtitle {
   width: 698px;
 }
 @media screen and (max-width: 1030px) {
+  #section-start-screen .section-container .start-screen-puppy {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 380px) {
+  #section-start-screen .section-container .start-screen-puppy {
+    width: 260px;
+  }
+}
+@media screen and (max-width: 1030px) {
   #section-start-screen .section-container {
     padding-top: 150px;
     flex-direction: column;
     gap: 100px;
   }
-  #section-start-screen .section-container .start-screen-puppy {
-    width: 80%;
+}
+@media screen and (max-width: 540px) {
+  #section-start-screen .section-container {
+    gap: 105px;
   }
 }
 
@@ -255,6 +312,11 @@ header.white .logo-subtitle {
     align-items: center;
   }
 }
+@media screen and (max-width: 540px) {
+  .start-screen {
+    width: auto;
+  }
+}
 
 .start-screen-text {
   font-family: "Arial", sans-serif;
@@ -263,9 +325,19 @@ header.white .logo-subtitle {
   line-height: 24px;
   color: #CDCDCD;
 }
+@media screen and (max-width: 540px) {
+  .start-screen-text {
+    text-align: center;
+  }
+}
 
 #about-the-shelter {
   background-color: #FFFFFF;
+}
+@media screen and (max-width: 540px) {
+  #about-the-shelter .section-container {
+    margin: 42px 25px 42.4px;
+  }
 }
 #about-the-shelter .section-container .about-container {
   display: flex;
@@ -281,6 +353,11 @@ header.white .logo-subtitle {
     max-width: 437px;
   }
 }
+@media screen and (max-width: 540px) {
+  #about-the-shelter .section-container .about-container {
+    gap: 42px;
+  }
+}
 
 .about {
   max-width: 430px;
@@ -289,8 +366,19 @@ header.white .logo-subtitle {
   gap: 25px;
 }
 
+@media screen and (max-width: 540px) {
+  .about-title {
+    text-align: center;
+  }
+}
+
 .about-pets {
   width: 300px;
+}
+@media screen and (max-width: 540px) {
+  .about-pets {
+    width: 260px;
+  }
 }
 
 .about-text {
@@ -300,6 +388,11 @@ header.white .logo-subtitle {
   line-height: 24px;
   color: #4C4C4C;
 }
+@media screen and (max-width: 540px) {
+  .about-text {
+    text-align: justify;
+  }
+}
 
 #our-pets {
   background: #F6F6F6;
@@ -307,12 +400,26 @@ header.white .logo-subtitle {
 #our-pets .section-container {
   text-align: center;
 }
+@media screen and (max-width: 540px) {
+  #our-pets .section-container {
+    margin-top: 42px;
+    margin-bottom: 42px;
+  }
+}
 #our-pets .section-container nav {
   margin-top: 45px;
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
   justify-content: center;
+}
+@media screen and (max-width: 970px) {
+  #our-pets .section-container.all-pets {
+    margin-bottom: 76px;
+  }
+  #our-pets .section-container.all-pets nav {
+    margin-top: 40px;
+  }
 }
 
 .pets-title {
@@ -325,6 +432,20 @@ header.white .logo-subtitle {
   align-items: center;
   margin: 60px auto;
 }
+@media screen and (max-width: 540px) {
+  .pets-content {
+    margin-top: 42px;
+    margin-bottom: 42px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 80px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .all-pets .pets-content {
+    margin: 30px auto;
+  }
+}
 
 .cards {
   display: flex;
@@ -336,6 +457,11 @@ header.white .logo-subtitle {
   gap: 40px;
   width: 100%;
   max-width: 1040px;
+}
+@media screen and (max-width: 540px) {
+  .cards {
+    order: 1;
+  }
 }
 .cards figure {
   background: #FAFAFA;
@@ -360,9 +486,13 @@ header.white .logo-subtitle {
   letter-spacing: 0.06em;
   color: #545454;
 }
-
-.all-pets {
+.all-pets .cards {
   gap: 30px 40px;
+  height: auto;
+  max-height: 1365px;
+  max-width: none;
+  justify-content: center;
+  margin: 0;
 }
 
 .arrow-button,
@@ -379,10 +509,22 @@ header.white .logo-subtitle {
 .arrow-left:hover {
   background-image: url(assets/Arrow-left.svg);
 }
+@media screen and (max-width: 540px) {
+  .arrow-left,
+  .arrow-left:hover {
+    order: 2;
+  }
+}
 
 .arrow-right,
 .arrow-right:hover {
   background-image: url(assets/Arrow-right.svg);
+}
+@media screen and (max-width: 540px) {
+  .arrow-right,
+  .arrow-right:hover {
+    order: 3;
+  }
 }
 
 #help-the-shelter {
@@ -425,15 +567,18 @@ header.white .logo-subtitle {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
+}
+@media screen and (max-width: 950px) {
+  #donation .section-container {
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
 }
 
 .donation-dog {
   width: 505px;
   height: 261px;
-}
-
-.donation {
-  margin-left: 30px;
 }
 
 .donation-text {
@@ -478,6 +623,12 @@ footer {
   color: #FFFFFF;
   align-self: center;
 }
+@media screen and (max-width: 1180px) {
+  .footer-container {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
 
 .footer-content {
   display: grid;
@@ -485,7 +636,14 @@ footer {
   grid-auto-flow: column;
   -moz-column-gap: 160px;
        column-gap: 160px;
-  margin: auto;
+}
+@media screen and (max-width: 900px) {
+  .footer-content {
+    grid-template-rows: repeat(3, auto);
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+    row-gap: 33px;
+  }
 }
 
 .contacts-container {
@@ -513,5 +671,4 @@ footer {
 
 .footer-puppy {
   width: 300px;
-  margin: auto;
 }/*# sourceMappingURL=style.css.map */
