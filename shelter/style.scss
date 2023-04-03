@@ -2,6 +2,9 @@ $desktop: 1280px;
 $tablet: 768px;
 $mobile: 320px;
 
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
 * {
     margin: 0;
     padding: 0;
@@ -44,22 +47,22 @@ button {
     letter-spacing: 0.06em;
     color: #292929;
     padding: 13px 43px;
-    border: 2px solid #F1CDB3;
+    border: 2px solid $color-primary;
 }
 
 button:hover,
 .cards figure:hover button {
-    background: #FDDCC4;
-    border-color: #FDDCC4;
+    background: $color-primary-light;
+    border-color: $color-primary-light;
     cursor: pointer;
 }
 
 .button-primary {
-    background: #F1CDB3;
+    background: $color-primary;
 }
 
 .button-secondary {
-    border-color: #F1CDB3;
+    border-color: $color-primary;
     background: transparent;
 }
 
@@ -98,6 +101,7 @@ h3 {
     @media screen and (max-width: 540px) {
         font-size: 25px;
         line-height: 32px;
+        text-align: center;
     }
 }
 
@@ -109,6 +113,11 @@ h4 {
     text-align: center;
     letter-spacing: 0.06em;
     color: #545454;
+
+    @media screen and (max-width: 540px) {
+        font-size: 15px;
+        line-height: 17px;
+    }
 }
 
 h5 {
@@ -118,6 +127,12 @@ h5 {
     line-height: 17px;
     letter-spacing: 0.06em;
     color: #545454;
+
+    @media screen and (max-width: 540px) {
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: normal;
+    }
 }
 
 section,
@@ -157,7 +172,6 @@ header {
 
     &.white {
         position: static;
-
         background-color: #FFFFFF;
 
         .logo-title {
@@ -166,6 +180,10 @@ header {
 
         .logo-subtitle {
             color: #292929;
+        }
+
+        .burger-button {
+            stroke: #000000;
         }
     }
 }
@@ -181,11 +199,13 @@ header {
         visibility: collapse;
         position: absolute;
         opacity: 0;
+        width: 0;
 
         @media screen and (min-width: $tablet) {
             opacity: 100%;
             visibility: visible;
             position: static;
+            width: auto;
         }
     }
 
@@ -206,7 +226,7 @@ header {
     font-size: 32px;
     line-height: 35px;
     letter-spacing: 0.06em;
-    color: #F1CDB3;
+    color: $color-primary;
 }
 
 .logo-subtitle {
@@ -221,7 +241,7 @@ header {
 
 .burger-button {
     display: block;
-
+    stroke: $color-primary;
 
     @media screen and (min-width: $tablet) {
         display: none;
@@ -250,7 +270,7 @@ header {
     text-decoration: underline;
     text-underline-offset: 7px;
     text-decoration-thickness: 3px;
-    text-decoration-color: #F1CDB3;
+    text-decoration-color: $color-primary;
     cursor: default;
 
     .white & {
@@ -362,12 +382,6 @@ header {
     gap: 25px;
 }
 
-.about-title {
-    @media screen and (max-width: 540px) {
-        text-align: center;
-    }
-}
-
 .about-pets {
     width: 300px;
 
@@ -410,10 +424,24 @@ header {
             @media screen and (max-width: 970px) {
                 margin-bottom: 76px;
 
+                .pets-content {
+                    margin: 30px auto;
+                }
+
                 nav {
-
                     margin-top: 40px;
+                }
+            }
 
+            @media screen and (max-width: 540px) {
+                margin-bottom: 42px;
+
+                .pets-content {
+                    margin-top: 42px;
+                }
+
+                nav {
+                    gap: 10px;
                 }
             }
         }
@@ -436,12 +464,6 @@ header {
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px 80px;
-    }
-
-    .all-pets & {
-        @media screen and (max-width: 970px) {
-            margin: 30px auto;
-        }
     }
 }
 
@@ -530,6 +552,12 @@ header {
 
 #help-the-shelter {
     background: #FFFFFF;
+
+    @media screen and (max-width: 540px) {
+        .section-container {
+            margin: 42px 15px;
+        }
+    }
 }
 
 .help-title {
@@ -547,11 +575,32 @@ header {
         column-gap: 60px;
     }
 
+    @media screen and (max-width: 540px) {
+        gap: 30px;
+        margin-top: 42px;
+    }
+
     figure {
         text-align: center;
 
         @media screen and (max-width: 1110px) {
             flex-basis: 170px;
+        }
+
+        @media screen and (max-width: 540px) {
+            flex-basis: 130px;
+
+            .list-image {
+                width: 50px;
+            }
+
+            h4 {
+                margin-top: 16px;
+            }
+        }
+
+        @media screen and (max-width: $mobile) {
+            margin-right: auto;
         }
     }
 
@@ -573,28 +622,42 @@ header {
             flex-direction: column-reverse;
             gap: 60px;
         }
+
+        @media screen and (max-width: 540px) {
+            margin: 42px 20px;
+            gap: 42px;
+        }
     }
 }
 
 .donation-dog {
     width: 505px;
-    height: 261px;
+
+    @media screen and (max-width: 540px) {
+        width: 94%;
+    }
 }
 
 .donation-text {
     margin: 20px 0;
+
+
 }
 
 #credit-card {
     display: inline-flex;
     align-items: center;
-    background: #F1CDB3;
+    background: $color-primary;
     border-radius: 9px;
     padding: 10px 15px;
 }
 
 .number-credit-card {
     margin-left: 15px;
+
+    @media screen and (max-width: 540px) {
+        margin-left: 14px;
+    }
 }
 
 .legal-information {
@@ -606,6 +669,11 @@ header {
     color: #B2B2B2;
     width: 380px;
     margin-top: 20px;
+
+    @media screen and (max-width: 540px) {
+        width: 280px;
+        text-align: justify;
+    }
 }
 
 footer {
@@ -629,6 +697,13 @@ footer {
         margin-top: 30px;
     }
 
+    @media screen and (max-width: 540px) {
+        gap: 40px;
+
+        br {
+            display: none;
+        }
+    }
 }
 
 .footer-content {
@@ -641,6 +716,25 @@ footer {
         grid-template-rows: repeat(3, auto);
         column-gap: 60px;
         row-gap: 33px;
+    }
+
+    @media screen and (max-width: 540px) {
+        grid-template-rows: repeat(6, auto);
+        justify-items: center;
+        gap: 42px;
+
+        h3 {
+            width: 240px;
+        }
+
+        h4 {
+            font-size: 20px;
+            line-height: 23px;
+        }
+
+        #london a {
+            justify-self: start;
+        }
     }
 }
 
@@ -666,7 +760,7 @@ footer {
         align-items: center;
 
         h4 {
-            color: #F1CDB3;
+            color: $color-primary;
             margin-left: 20px;
             text-align: start;
         }
@@ -675,4 +769,8 @@ footer {
 
 .footer-puppy {
     width: 300px;
+
+    @media screen and (max-width: 540px) {
+        width: 260px;
+    }
 }
