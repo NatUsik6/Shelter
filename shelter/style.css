@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   font-family: "Arial", sans-serif;
@@ -20,11 +24,19 @@ a:hover {
   color: #FAFAFA;
 }
 
-.white a {
+header.white a {
   color: #545454;
 }
-.white a:hover {
+header.white a:hover {
   color: #292929;
+}
+header.white nav {
+  background-color: #F6F6F6;
+}
+@media screen and (min-width: 768px) {
+  header.white nav {
+    background-color: transparent;
+  }
 }
 
 button {
@@ -197,14 +209,28 @@ header.white .burger-button {
   visibility: collapse;
   position: absolute;
   opacity: 0;
-  width: 0;
+  z-index: 20;
+  width: 320px;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  background-color: #292929;
+  display: flex;
+}
+.burger-menu-open .header-container nav {
+  visibility: visible;
+  opacity: 1;
+  right: 0;
 }
 @media screen and (min-width: 768px) {
   .header-container nav {
+    display: block;
     opacity: 100%;
     visibility: visible;
     position: static;
     width: auto;
+    height: auto;
+    background-color: transparent;
   }
 }
 @media screen and (max-width: 320px) {
@@ -241,6 +267,13 @@ header.white .burger-button {
 .burger-button {
   display: block;
   stroke: #F1CDB3;
+  z-index: 30;
+}
+.burger-button:hover {
+  cursor: pointer;
+}
+.burger-menu-open .burger-button {
+  transform: rotate(90deg);
 }
 @media screen and (min-width: 768px) {
   .burger-button {
@@ -248,21 +281,38 @@ header.white .burger-button {
   }
 }
 
-.burger-button:hover {
-  cursor: pointer;
-}
-
 .nav-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
+  gap: 40px;
+  flex-direction: column;
   list-style: none;
-  margin: 0 -17.5px;
+  text-align: center;
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .nav-list {
+    flex-direction: row;
+    gap: 0;
+    margin: 0 -17.5px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
 }
 
 .nav-item {
   margin: 0 17.5px;
+}
+
+.nav-link {
+  font-size: 32px;
+  line-height: 51px;
+}
+@media screen and (min-width: 768px) {
+  .nav-link {
+    font-size: 15px;
+    line-height: 24px;
+  }
 }
 
 .nav-link.active {
@@ -275,6 +325,22 @@ header.white .burger-button {
 }
 .white .nav-link.active {
   color: #545454;
+}
+
+.overlay {
+  visibility: collapse;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(41, 41, 41, 0.6);
+}
+.burger-menu-open .overlay {
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
 }
 
 #section-start-screen {
