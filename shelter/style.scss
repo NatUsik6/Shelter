@@ -110,6 +110,10 @@ h3 {
     letter-spacing: 0.06em;
     color: #545454;
 
+    .description-popup & {
+        color: #000000;
+    }
+
     @media screen and (max-width: 540px) {
         font-size: 25px;
         line-height: 32px;
@@ -126,6 +130,10 @@ h4 {
     letter-spacing: 0.06em;
     color: #545454;
 
+    .description-popup & {
+        color: #000000;
+    }
+
     @media screen and (max-width: 540px) {
         font-size: 15px;
         line-height: 17px;
@@ -139,6 +147,14 @@ h5 {
     line-height: 17px;
     letter-spacing: 0.06em;
     color: #545454;
+
+    .description-popup & {
+        color: #000000;
+    }
+
+    .description-popup span & {
+        font-weight: 700;
+    }
 
     @media screen and (max-width: 540px) {
         line-height: 24px;
@@ -339,6 +355,7 @@ header {
     z-index: 10;
     background: rgba(41, 41, 41, 0.6);
 
+    .popup-open~&,
     .burger-menu-open & {
         visibility: visible;
         opacity: 1;
@@ -614,6 +631,69 @@ header {
 
     @media screen and (max-width: 540px) {
         order: 3;
+    }
+}
+
+.popup {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 900px;
+    height: 500px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    z-index: 20;
+    background: #FAFAFA;
+    border-radius: 9px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    visibility: collapse;
+    opacity: 0;
+    top: -100%;
+    left: 50%;
+    transition: .5s;
+
+    &.popup-open {
+        visibility: visible;
+        opacity: 1;
+        top: 50%;
+    }
+}
+
+.popup-image {
+    height: 500px;
+}
+
+.description-popup {
+    margin: 50px 20px auto 29px;
+    text-align: left;
+
+    &>h5 {
+        margin: 40px 0;
+    }
+
+    h4 {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+    }
+
+    li {
+        h5 {
+            display: inline;
+            margin-left: 10px;
+        }
+
+        &::before {
+            content: "\2022";
+            color: $color-primary;
+        }
     }
 }
 
