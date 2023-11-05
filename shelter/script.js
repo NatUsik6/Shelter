@@ -36,5 +36,3 @@ function disablePopupOpen() {
 
     document.body.style.overflow = '';
 }
-
-alert('Спасибо большое, что не проверял.) Однако у меня не вышло реализовать всё.(');
